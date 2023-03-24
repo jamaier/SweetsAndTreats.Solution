@@ -47,7 +47,15 @@
     <!-- navigation bar ends -->
     
     <div id="main-body">
-      @RenderBody()
+      <div>
+        @RenderBody()
+      </div>
+      <div>
+        @await Html.PartialAsync("Sidebar")
+      </div>
+      <div>
+        @await Html.PartialAsync("Footer")
+      </div>
     </div>
   </body>
 </html>
