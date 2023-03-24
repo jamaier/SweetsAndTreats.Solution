@@ -1,4 +1,8 @@
-
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using SweetsAndTreats.Models;
+using System.Threading.Tasks;
+using SweetsAndTreats.ViewModels;
 
 namespace SweetsAndTreats.Controllers
 {
@@ -8,11 +12,16 @@ namespace SweetsAndTreats.Controllers
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetsAndTreatsContext db)
+    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetsAndTreatsContext db)
     {
       _userManager = userManager;
       _signInManager = signInManager;
       _db = db;
+    }
+
+    public IActionResult AccessDenied()
+    {
+      return View();
     }
 
     public ActionResult Index()
@@ -20,17 +29,17 @@ namespace SweetsAndTreats.Controllers
       return View();
     }
 
-    public ActionResult Register()
+    public IActionResult Register()
     {
       return View();
     }
 
     [HttpPost]
-    public async Task<ActionResult> Register(RegisterViewModel model)
+    public async Task<ActionResult> Register (RegisterViewModel model)
     {
       if (!ModelState.IsValid)
       {
-        return View();
+        return View(model);
       }
       else
       {
@@ -46,7 +55,7 @@ namespace SweetsAndTreats.Controllers
           {
             ModelState.AddModelError("", error.Description);
           }
-          return View();
+          return View(model);
         }
       }
     }
