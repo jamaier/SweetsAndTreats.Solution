@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using SweetsAndTreats.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
+
 namespace SweetsAndTreats.Controllers
 {
   public class FlavorsController : Controller
@@ -17,16 +19,19 @@ namespace SweetsAndTreats.Controllers
       _userManager = userManager;
     }
 
+    [AllowAnonymous]
     public ActionResult Index()
     {
       return View(_db.Flavors.ToList());
     }
 
+    [Authorize]
     public ActionResult Create()
     {
       return View();
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult Create(Flavor flavor)
     {
@@ -35,6 +40,7 @@ namespace SweetsAndTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       ViewBag.Treats = _db.Treats.ToList();
@@ -45,6 +51,7 @@ namespace SweetsAndTreats.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     public ActionResult AddTreat(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
@@ -52,6 +59,7 @@ namespace SweetsAndTreats.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult AddTreat(Flavor flavor, int treatId)
     {
@@ -66,13 +74,14 @@ namespace SweetsAndTreats.Controllers
       return RedirectToAction("Details", new { id = flavor.FlavorId });
     }
 
-
+    [Authorize]
     public ActionResult Edit(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult Edit(Flavor flavor)
     {
@@ -81,12 +90,14 @@ namespace SweetsAndTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     public ActionResult Delete(int id)
     {
       Flavor thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
       return View(thisFlavor);
     }
 
+    [Authorize]
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
@@ -96,6 +107,7 @@ namespace SweetsAndTreats.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize]
     [HttpPost]
     public ActionResult DeleteJoin(int joinId)
     {
