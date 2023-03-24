@@ -2,7 +2,7 @@ body {
   background-color: lightgrey;
 }
 
-div#nav-container {
+/* div#nav-container {
   position:fixed;
   top:0px;
   left:0px;
@@ -11,7 +11,7 @@ div#nav-container {
   background:#333;
   color:#CCC;
   padding:8px;
-}
+} */
 
 div#footer {
 	position:fixed;
@@ -37,10 +37,14 @@ div#SideBar {
 
 div#info-body {
   margin-left:200px;
-  text-decoration: none;;
+  text-decoration: none;
 }
 
 #linkId {
   text-decoration: none;
   color: white;
+  border: 1px solid black;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
 }
