@@ -2,7 +2,7 @@ body {
   background-color: lightgrey;
 }
 
-/* div#nav-container {
+div#nav-container {
   position:fixed;
   top:0px;
   left:0px;
@@ -11,7 +11,7 @@ body {
   background:#333;
   color:#CCC;
   padding:8px;
-} */
+}
 
 div#footer {
 	position:fixed;
@@ -25,6 +25,7 @@ div#footer {
 }
 
 div#SideBar {
+  max-width: 15vw;
   position:fixed;
   top: 64px;
   left:0px;
@@ -36,7 +37,8 @@ div#SideBar {
 }
 
 div#info-body {
-  margin-left:200px;
+  margin-top: 10vh;
+  margin-left:20vw;
   text-decoration: none;
 }
 

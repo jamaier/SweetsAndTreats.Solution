@@ -10,7 +10,7 @@
 @Html.DisplayNameFor(model => model.FlavorName): @Html.DisplayFor(model => model.FlavorName)
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Delete" />
+    <input type="submit" value="Delete" class="btn btn-danger"/>
 }
 <div id="SideBar">
 @Html.ActionLink("Back to List", "Index", "Flavors", null, new { id="linkId" })

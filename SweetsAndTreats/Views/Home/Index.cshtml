@@ -12,7 +12,7 @@
   @if (Model["flavors"].Length == 0)
   {
     <p>No flavor have been added yet!</p>
-    <p>@Html.ActionLink("Add a Flavor?", "Create", "Flavors")</p>
+    <p>@Html.ActionLink("Add Flavor?", "Create", "Flavors", null, new { id="linkId" })</p>
   } 
   <ul>
     @foreach (Flavor flavor in Model["flavors"])
@@ -25,7 +25,7 @@
     @if (Model["treats"].Length == 0)
     {
       <p>No Treats have been added yet!</p>
-      <p>@Html.ActionLink("Add a Treat?", "Create", "Treats")</p>
+      <p>@Html.ActionLink("Add Treat?", "Create", "Treats", null, new { id="linkId" })</p>
     } 
     <ul>
       @foreach (Treat treat in Model["treats"])

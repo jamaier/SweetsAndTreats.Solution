@@ -23,14 +23,14 @@ else
     @using (Html.BeginForm("DeleteJoin", "Flavors"))
     {
       @Html.Hidden("joinId", @join.TreatFlavorId)
-      <input type="submit" value="Delete"  class="btn btn-danger"/>
+      <input type="submit" value="Delete"  class="btn btn-dark"/>
     }
   }
   </ul>
 }
 
 <div id="SideBar">
-<p>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId }, new { id="linkId" })</p>
+<p>@Html.ActionLink("Add Treat", "AddTreat", new { id = Model.FlavorId }, new { id="linkId" })</p>
 <p>@Html.ActionLink("Back to list", "Index", "Flavors", null, new { id="linkId" })</p>
 <p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }, new { id="linkId" })</p>
 <p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId }, new { id="linkId" })</p>
