@@ -12,7 +12,7 @@ namespace SweetsAndTreats.Controllers
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
 
-    public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetsAndTreatsContext db)
+    public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, SweetsAndTreatsContext db)
     {
       _userManager = userManager;
       _signInManager = signInManager;
@@ -35,7 +35,7 @@ namespace SweetsAndTreats.Controllers
     }
 
     [HttpPost]
-    public async Task<ActionResult> Register (RegisterViewModel model)
+    public async Task<ActionResult> Register(RegisterViewModel model)
     {
       if (!ModelState.IsValid)
       {
