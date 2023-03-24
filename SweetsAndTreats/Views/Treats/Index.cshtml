@@ -19,6 +19,7 @@ else
     }
   </ul>
 }
-
-<p>@Html.ActionLink("Add new treat", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<div id="Sidebar">
+<p>@Html.ActionLink("Add new treat", "Create", "Treats", null, new { id = "linkId" })</p>
+<p>@Html.ActionLink("Home", "Index", "Home", null, new { id = "linkId" })</p>
+</div>

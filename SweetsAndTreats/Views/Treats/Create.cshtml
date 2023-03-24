@@ -16,4 +16,6 @@
 
   <input type="submit" value="Add new item" class="btn btn-success" />
 }
-<p>@Html.ActionLink("Show all Treats", "Index")</p>
+<div id="Sidebar">
+<p>@Html.ActionLink("Show all Treats", "Index", "Treats", null, new { id = "linkId" })</p>
+</div>

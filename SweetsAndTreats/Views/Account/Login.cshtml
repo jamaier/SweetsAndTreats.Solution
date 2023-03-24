@@ -25,6 +25,8 @@
 
   <input type="submit" value="Log in" />
 }
-<p>@Html.ActionLink("Register for an account", "Register")</p>
-<p>@Html.ActionLink("Back to accounts page", "Index")</p>
 
+<div id="SideBar">
+<p>@Html.ActionLink("Register for an account", "Register", "Account", null, new { id = "linkId" })</p>
+<p>@Html.ActionLink("Back to accounts page", "Index", "Account", null, new { id = "linkId" })</p>
+</div>

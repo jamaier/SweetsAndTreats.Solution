@@ -28,10 +28,9 @@ else
   </ul>
 }
 
-<p>@Html.ActionLink("Add a Flavor to this Treat", "AddFlavor", new { id = Model.TreatId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
-<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.TreatId })</p>
-
-
-
+<div id="Sidebar">
+<p>@Html.ActionLink("Add a Flavor to this Treat", "AddFlavor", new { id = Model.TreatId }, new { id = "linkId" })</p>
+<p>@Html.ActionLink("Back to list", "Index", "Treats", null, new { id = "linkId" })</p>
+<p>@Html.ActionLink("Edit Treat", "Edit", "Treats", new { id = Model.TreatId }, new { id = "linkId" })</p>
+<p>@Html.ActionLink("Delete Item", "Delete", "Treats", new { id = Model.TreatId }, new { id = "linkId" })</p>
+</div>

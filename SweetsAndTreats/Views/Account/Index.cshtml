@@ -15,4 +15,7 @@ else
   <p>@Html.ActionLink("Register", "Register")</p>
   <p>@Html.ActionLink("Log in", "Login")</p>
 }
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+
+<div id="SideBar">
+<p>@Html.ActionLink("Home", "Index", "Home", null, new { id = "linkId" })</p>
+</div>
