@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@using SweetsAndTreats.Models
+@model Treat
+
+<h2>@Html.DisplayFor(model => model.TreatName) Details</h2>
+<hr />
+
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>This Treat hasn't been assigned any flavors.</p>
+}
+else
+{
+  <h4>This Treat has the following Flavor(s)</h4>
+  <ul>
+    @foreach(TreatFlavor join in Model.JoinEntities)
+    {
+      <li>Tag: @join.Flavor.FlavorName</li>
+      @using (Html.BeginForm("DeleteJoin", "Treats"))
+      {
+        @Html.Hidden("joinId", @join.TreatFlavorId)
+        <input type="submit" value="Delete"/>
+      }
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Treat", "Edit", new { id = Model.TreatId })</p>
+
+<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.TreatId })</p>
+
+
+
