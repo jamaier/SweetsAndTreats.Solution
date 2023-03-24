@@ -5,7 +5,7 @@
 @using SweetsAndTreats.Models
 @model Flavor
 
-<h2>Tag Details</h2>
+<h2>Flavor Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.FlavorName): @Html.DisplayFor(model => model.FlavorName)</h3>
 
@@ -28,7 +28,10 @@ else
   }
   </ul>
 }
-<p>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</p>
-<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</p>
+
+<div id="SideBar">
+<p>@Html.ActionLink("Add Treat to this Flavor", "AddTreat", new { id = Model.FlavorId }, new { id="linkId" })</p>
+<p>@Html.ActionLink("Back to list", "Index", "Flavors", null, new { id="linkId" })</p>
+<p>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId }, new { id="linkId" })</p>
+<p>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId }, new { id="linkId" })</p>
+</div>
