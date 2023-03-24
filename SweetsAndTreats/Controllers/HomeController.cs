@@ -26,7 +26,7 @@ namespace SweetsAndTreats.Controllers
       List<Treat> treats = _db.Treats.ToList();
       List<Flavor> flavors = _db.Flavors.ToList();
 
-      model.Add("books", treats.ToArray());
+      model.Add("treats", treats.ToArray());
       model.Add("flavors", flavors.ToArray());
 
       return View(model);

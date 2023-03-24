@@ -4,4 +4,35 @@
 
 @using SweetsAndTreats.Models
 
-<h1>Welcome</h1>
+<h1>Pierre's Sweets and Treats</h1>
+
+<hr>
+
+<h2>Flavor's:</h2>
+@if (Model["flavors"].Length == 0)
+{
+  <p>No flavor have been added yet!</p>
+  <p>@Html.ActionLink("Add a Flavor?", "Create", "Flavors")</p>
+} 
+<ul>
+  @foreach (Flavor flavor in Model["flavors"])
+  {
+    <li>@Html.ActionLink(@flavor.FlavorName, "Details", "Flavors", new { id = @flavor.FlavorId})</li>
+  }
+</ul>
+<hr>
+  <h2>Treats's:</h2>
+  @if (Model["treats"].Length == 0)
+  {
+    <p>No Treats have been added yet!</p>
+    <p>@Html.ActionLink("Add a Treat?", "Create", "Treats")</p>
+  } 
+  <ul>
+    @foreach (Treat treat in Model["treats"])
+    {
+      <li>@Html.ActionLink(@treat.TreatName, "Details", "Treats", new { id = @treat.TreatId})</li>
+    }
+  </ul>
+
+<hr>
+<p>@Html.ActionLink("Log out", "Index", "Account")</p>
